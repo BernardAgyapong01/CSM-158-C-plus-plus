@@ -13,7 +13,7 @@ int main()
     cin>> noOfchildren ;
 
     if (hoursWorked > 40){
-        overtimeRate= (40*5)+ (hoursWorked-40*5) * 1.5;
+        overtimeRate= (40*5)+ (hoursWorked-40)*1.5;
     }
     else{
         regularRate= hoursWorked*5 ;
