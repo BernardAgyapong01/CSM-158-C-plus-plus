@@ -4,39 +4,43 @@ using namespace std;
 
 int main()
 {
-    int hoursWorked, noOfchildren;
-    double grossPay, regularRate, overtimeRate, incomeTax, nhcl, districtTax, eduFund, netPay;
+    char grade;
+    cout<< "Welcome to the interview room "<<endl;
+    cout<< "Enter your grade: ";
+    cin>> grade;
 
-    cout<< "Number of hours worked: ";
-    cin>> hoursWorked ;
-    cout<< "Number of children: ";
-    cin>> noOfchildren ;
+    switch (grade)
+    {
+    case'A':
+    case'a':
+        cout<< "Your grade is within the range 100-70. \nYou are welcome to the interview.";
+        break;
 
-    if (hoursWorked > 40){
-        overtimeRate= (40*5)+ (hoursWorked-40)*1.5;
+    case'B':
+    case'b':
+        cout<< "Your grade is within the range 69-60. \nYou are welcome to the interview.";
+        break;
+
+    case'C':
+    case'c':
+        cout<< "Your grade is within the range 59-50. \nYou are welcome to the interview.";
+        break;
+
+    case'D':
+    case'd':
+        cout<< "Your grade is within the range 49-40. \nYou are welcome to the interview.";
+        break;
+
+    case'F':
+    case'f':
+        cout<< "Your grade is within the range 39-0. \nYou are welcome to the interview.";
+        break;
+
+
+    default:
+        cout<< "Please enter your grace again";
+
     }
-    else{
-        regularRate= hoursWorked*5 ;
-    }
-
-    grossPay= regularRate + overtimeRate ;
-    incomeTax= grossPay*0.15;
-    nhcl= grossPay*0.025;
-    districtTax= grossPay*0.01;
-     if (noOfchildren > 3){
-        eduFund= (noOfchildren -3)*0.50 ;
-     }
-     else{
-        eduFund= 0;
-     }
-     netPay= grossPay-(incomeTax+nhcl+districtTax+eduFund) ;
-
-    cout << "Gross Pay: " << grossPay << endl;
-    cout << "Income Tax: " << incomeTax << endl;
-    cout << "National Health Contribution Levy: " << nhcl << endl;
-    cout << "District Tax: " << districtTax << endl;
-    cout << "Educational Fund: " << eduFund << endl;
-    cout << "Net Pay: " << netPay << endl;
 
     return 0;
 }
